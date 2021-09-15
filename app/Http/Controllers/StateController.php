@@ -13,7 +13,7 @@ use Session;
 
 class StateController extends Controller
 {
-
+    //Sirajul Islam
     public function immovable_property(){
         $station_info = Branch_info::branch_info_select(['is_active'=>1]);
         return view('asset.immovable_property.immovable_property_info',['station_info'=>$station_info]);

@@ -22,6 +22,7 @@ use File;
 
 class ArchiveController extends Controller
 {
+   // Mehedi Hasan Shamim     
     public function __construct()
     {
         $this->middleware('auth');
@@ -401,11 +402,11 @@ class ArchiveController extends Controller
             'archive_info.*',
             'branch_infos.name as station_name',
             'employees.emp_name',
-            DB::raw('archive_info.songit_info->>"$.name" as song_name'),
-            DB::raw('archive_info.songit_info->>"$.id" as song_id'),
-            DB::raw('archive_info.songit_info->>"$.first_line" as first_line'),
-            DB::raw('archive_info.songit_info->>"$.file_name" as file_name'),
-            DB::raw('archive_info.songit_info->>"$.file_directory" as file_directory'),
+            // DB::raw('archive_info.songit_info->>"$.name" as song_name'),
+            // DB::raw('archive_info.songit_info->>"$.id" as song_id'),
+            // DB::raw('archive_info.songit_info->>"$.first_line" as first_line'),
+            // DB::raw('archive_info.songit_info->>"$.file_name" as file_name'),
+            // DB::raw('archive_info.songit_info->>"$.file_directory" as file_directory'),
         ];
 
         $where = ['archive_type' => 1, 'archive_info.is_active' => 1];
@@ -477,9 +478,13 @@ class ArchiveController extends Controller
             ]
         ];
 
-        $archive_list = Archive_model::get_rows("archive_info", $select, $where, $join_param,false,$where_date,$between,$order_by);
+     
+       $archive_list = Archive_model::get_rows("archive_info", $select, $where, $join_param,false,$where_date,$between,$order_by);
+
         $active_playlist = Archive_model::get_row("archive_playlist", ["*"], ['status' => 1, 'is_active' => 1]);
         $employee_info = Archive_model::get_rows("employees", ["*"], ['is_active'=>1]);
+       
+
         return view(
             'archive.archive_list',
             [
@@ -498,11 +503,11 @@ class ArchiveController extends Controller
             'archive_info.*',
             'branch_infos.name as station_name',
             'employees.emp_name',
-            DB::raw('archive_info.kobita_info->>"$.name" as kobita_name'),
-            DB::raw('archive_info.kobita_info->>"$.id" as kobita_id'),
-            DB::raw('archive_info.kobita_info->>"$.first_line" as first_line'),
-            DB::raw('archive_info.kobita_info->>"$.file_name" as file_name'),
-            DB::raw('archive_info.kobita_info->>"$.file_directory" as file_directory'),
+            // DB::raw('archive_info.kobita_info->>"$.name" as kobita_name'),
+            // DB::raw('archive_info.kobita_info->>"$.id" as kobita_id'),
+            // DB::raw('archive_info.kobita_info->>"$.first_line" as first_line'),
+            // DB::raw('archive_info.kobita_info->>"$.file_name" as file_name'),
+            // DB::raw('archive_info.kobita_info->>"$.file_directory" as file_directory'),
         ];
 
         $where = ['archive_type' => 2, 'archive_info.is_active' => 1];

@@ -89,7 +89,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-2">
-                                        <input type="text" name="bangla_son" value="১৪২৬" class="form-control" readonly="">
+                                        <input type="text" name="bangla_son" value="১৪২৮" class="form-control" readonly="">
                                     </div>
 
 

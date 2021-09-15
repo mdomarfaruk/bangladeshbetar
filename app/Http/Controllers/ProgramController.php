@@ -21,6 +21,7 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class ProgramController extends Controller
 {
+    // Md Omar Faruk
     public function __construct() {
         $this->middleware('auth');
     }
@@ -1632,6 +1633,8 @@ class ProgramController extends Controller
                 $value2 = strtotime($a2['record_date']);
                 return $value1 - $value2;
             });
+        }else{
+            $get_program_planning_info = [];
         }
 
         $page_title='রেকডিং লিস্ট';
@@ -2263,6 +2266,7 @@ class ProgramController extends Controller
     }
     public function add_presentation_setting(){
         $host = request()->getHttpHost();
+        
 
         $station_id= (!empty(Session::get('user_info')->station_id)?Session::get('user_info')
         ->station_id:NULL);
@@ -2336,6 +2340,10 @@ class ProgramController extends Controller
         $presentation_setting_info= Program_schedule_info::get_program_presentation_single_setting([
             'program_presentation_setting.id' =>$id
         ]);
+
+        // echo "<pre>";
+        // print_r($atrist_info_info);exit;
+
         return view('program.presentation.setting.presentation_setting_info_report',['atrist_info_info'=>$atrist_info_info,'presentation_setting_info'=>$presentation_setting_info]);
     }
 

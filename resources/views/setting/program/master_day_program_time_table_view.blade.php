@@ -77,6 +77,7 @@
                         <tbody id="dynamicJobHistorytr">
                             <?php
                             $content = json_decode($schedule_info->content,true);
+
                             $days_array = [
                                 1 => 'শনিবার',
                                 2=> 'রবিবার',
@@ -103,9 +104,11 @@
                             <tr id="<?php echo $key; ?>">
                                 <td>
                                     <?php 
+                                      if(!empty($value['days'] )){
                                         foreach($value['days'] as $day_id) {
                                             echo $days_array[$day_id].'<br/>';
                                         }
+                                    }
                                     ?>
                                 </td>
                                 <td>

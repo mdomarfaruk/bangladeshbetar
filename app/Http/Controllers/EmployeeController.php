@@ -25,6 +25,7 @@ use \Milon\Barcode\DNS1D;
 
 class EmployeeController extends Controller
 {
+    // Md Omar Faruk 
     public function __construct() {
         $this->middleware('auth');
     }

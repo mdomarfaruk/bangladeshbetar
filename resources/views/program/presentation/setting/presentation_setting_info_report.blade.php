@@ -15,6 +15,8 @@
 @section('main_content_area')
     <article class="col-sm-12 col-md-12 col-lg-12">
 
+       
+
         <!-- Widget ID (each widget will need unique ID)-->
         <div class="jarviswidget" id="wid-id-2" data-widget-colorbutton="false" data-widget-editbutton="false">
             <header>
@@ -28,6 +30,7 @@
                 </a>
 
             </header>
+            
             <div>
                 <div class="widget-body no-padding">
                     <table class="table table-bordered table-striped table-hover" style="width:100%">
@@ -46,17 +49,22 @@
                                 </div>
                             </td>
                         </tr>
+                        
                         <?php
                         $day_name = show_day_info_bn();
-                        $day_info=(!empty($presentation_setting_info->content_info))?json_decode
+               
+                        $day_info=(!empty($presentation_setting_info->content_info))? json_decode
                         ($presentation_setting_info->content_info,true):'';
-                        //exit;
+
                         ?>
+                        
                         <tr>
                             <td>
                                 <?php
                                 foreach ($day_info as $day_id=>$day_data) {
-                                $j = 0;
+                                   
+                                 $j = 0;
+
                                 ?>
                                 <div class="col-sm-12" style="padding-bottom:2px;background: #d0d0d0">
                                     <div class="col-sm-6" style="color:red;">
@@ -65,9 +73,12 @@
                                                value="{{ $day_id }}">
                                     </div>
                                 </div>
+
+                     
                                 @foreach($day_data as $key=> $odivision_info)
                                     <table class="table table-bordered table-striped table-hover width100per" id="presentation_table">
                                         <tr>
+                                          
                                             <th colspan="6">
                                                 @if( $key ==1)
                                                     প্রথম অধিবেশন(৬.০০-১২.০০)
@@ -80,6 +91,7 @@
                                                 @endif
                                             </th>
                                         </tr>
+                                       
                                         <tr>
                                             <td style="width: 20% !important;">
                                                 <?php
@@ -97,6 +109,7 @@
                                                     }
                                                 ?>
                                             </td>
+                                           
                                             <td style="width: 20% !important;">
                                                 <?php
                                                     if(!empty($odivision_info['log_writer'])){
@@ -113,6 +126,7 @@
                                                     }
                                                 ?>
                                             </td>
+                                           
                                             <td style="width: 20% !important;">
                                                 <?php
                                                     if(!empty($odivision_info['officer_incharge'])){
@@ -129,6 +143,7 @@
                                                     }
                                                 ?>
                                             </td>
+                                            
                                             <td style="width: 20% !important;">
                                                 <?php
                                                     if(!empty($odivision_info['officer_assistent'])){
@@ -145,6 +160,7 @@
                                                     }
                                                 ?>
                                             </td>
+                                           
                                             <td style="width: 20% !important;">
                                                 <?php
                                                     if(!empty($odivision_info['duty_officer'])){
@@ -163,12 +179,16 @@
                                             </td>
 
                                         </tr>
+                                       
                                     </table>
+                                    
 
                                 @endforeach
-                                <?php $j++;
+                              
+                                <?php 
+                                  $j++;
                                 }
-                                ?>
+                                  ?>
 
                             </td>
                         </tr>

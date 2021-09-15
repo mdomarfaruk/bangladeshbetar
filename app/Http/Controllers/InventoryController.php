@@ -19,6 +19,7 @@ use Session;
 
 class InventoryController extends Controller
 {
+    // Sirajul Islam
     public function index(){
         if(!isset( Auth::user()->id)&&(empty(Auth::user()->id))) {
             return redirect('/login');

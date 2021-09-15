@@ -784,7 +784,7 @@ class SettingCtrl extends Controller
         $get_odivision_info = All_stting::get_odivision_info();
         $employee_info = Employee::get_employee_info_name();
         
-            // dd($schedule_info);
+        // dd($employee_info);
         return view('setting.program.master_day_program_time_table_view',
             [
                 'station_info'=>$station_info,
