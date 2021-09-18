@@ -598,11 +598,11 @@ class ArchiveController extends Controller
             'archive_info.*',
             'branch_infos.name as station_name',
             'employees.emp_name',
-            DB::raw('archive_info.natok_info->>"$.name" as natok_name'),
-            DB::raw('archive_info.natok_info->>"$.id" as natok_id'),
-            DB::raw('archive_info.natok_info->>"$.nattokar" as nattokar_id'),
-            DB::raw('archive_info.natok_info->>"$.file_name" as file_name'),
-            DB::raw('archive_info.natok_info->>"$.file_directory" as file_directory'),
+            // DB::raw('archive_info.natok_info->>"$.name" as natok_name'),
+            // DB::raw('archive_info.natok_info->>"$.id" as natok_id'),
+            // DB::raw('archive_info.natok_info->>"$.nattokar" as nattokar_id'),
+            // DB::raw('archive_info.natok_info->>"$.file_name" as file_name'),
+            // DB::raw('archive_info.natok_info->>"$.file_directory" as file_directory'),
         ];
 
         $where = ['archive_type' => 3, 'archive_info.is_active' => 1];
@@ -694,10 +694,10 @@ class ArchiveController extends Controller
             'archive_info.*',
             'branch_infos.name as station_name',
             'employees.emp_name',
-            DB::raw('archive_info.program_info->>"$.name" as program_name'),
-            DB::raw('archive_info.program_info->>"$.id" as program_id'),
-            DB::raw('archive_info.program_info->>"$.file_name" as file_name'),
-            DB::raw('archive_info.program_info->>"$.file_directory" as file_directory'),
+            // DB::raw('archive_info.program_info->>"$.name" as program_name'),
+            // DB::raw('archive_info.program_info->>"$.id" as program_id'),
+            // DB::raw('archive_info.program_info->>"$.file_name" as file_name'),
+            // DB::raw('archive_info.program_info->>"$.file_directory" as file_directory'),
         ];
 
         $where = ['archive_type' => 4, 'archive_info.is_active' => 1];
@@ -790,10 +790,10 @@ class ArchiveController extends Controller
             'archive_info.*',
             'branch_infos.name as station_name',
             'employees.emp_name',
-            DB::raw('archive_info.vhason_info->>"$.name" as program_name'),
-            DB::raw('archive_info.vhason_info->>"$.id" as vhason_id'),
-            DB::raw('archive_info.vhason_info->>"$.file_name" as file_name'),
-            DB::raw('archive_info.vhason_info->>"$.file_directory" as file_directory'),
+            // DB::raw('archive_info.vhason_info->>"$.name" as program_name'),
+            // DB::raw('archive_info.vhason_info->>"$.id" as vhason_id'),
+            // DB::raw('archive_info.vhason_info->>"$.file_name" as file_name'),
+            // DB::raw('archive_info.vhason_info->>"$.file_directory" as file_directory'),
         ];
 
         $where = ['archive_type' => 5, 'archive_info.is_active' => 1];
@@ -885,10 +885,10 @@ class ArchiveController extends Controller
             'archive_info.*',
             'branch_infos.name as station_name',
             'employees.emp_name',
-            DB::raw('archive_info.sakhhatkar_info->>"$.name" as program_name'),
-            DB::raw('archive_info.sakhhatkar_info->>"$.id" as vhason_id'),
-            DB::raw('archive_info.sakhhatkar_info->>"$.file_name" as file_name'),
-            DB::raw('archive_info.sakhhatkar_info->>"$.file_directory" as file_directory'),
+            // DB::raw('archive_info.sakhhatkar_info->>"$.name" as program_name'),
+            // DB::raw('archive_info.sakhhatkar_info->>"$.id" as vhason_id'),
+            // DB::raw('archive_info.sakhhatkar_info->>"$.file_name" as file_name'),
+            // DB::raw('archive_info.sakhhatkar_info->>"$.file_directory" as file_directory'),
         ];
 
         $where = ['archive_type' => 6, 'archive_info.is_active' => 1];
@@ -981,10 +981,10 @@ class ArchiveController extends Controller
             'archive_info.*',
             'branch_infos.name as station_name',
             'employees.emp_name',
-            DB::raw('archive_info.kothika_info->>"$.name" as program_name'),
-            DB::raw('archive_info.kothika_info->>"$.id" as vhason_id'),
-            DB::raw('archive_info.kothika_info->>"$.file_name" as file_name'),
-            DB::raw('archive_info.kothika_info->>"$.file_directory" as file_directory'),
+            // DB::raw('archive_info.kothika_info->>"$.name" as program_name'),
+            // DB::raw('archive_info.kothika_info->>"$.id" as vhason_id'),
+            // DB::raw('archive_info.kothika_info->>"$.file_name" as file_name'),
+            // DB::raw('archive_info.kothika_info->>"$.file_directory" as file_directory'),
         ];
 
         $where = ['archive_type' => 7, 'archive_info.is_active' => 1];
@@ -1076,10 +1076,10 @@ class ArchiveController extends Controller
             'archive_info.*',
             'branch_infos.name as station_name',
             'employees.emp_name',
-            DB::raw('archive_info.procharona_info->>"$.name" as program_name'),
-            DB::raw('archive_info.procharona_info->>"$.id" as vhason_id'),
-            DB::raw('archive_info.procharona_info->>"$.file_name" as file_name'),
-            DB::raw('archive_info.procharona_info->>"$.file_directory" as file_directory'),
+            // DB::raw('archive_info.procharona_info->>"$.name" as program_name'),
+            // DB::raw('archive_info.procharona_info->>"$.id" as vhason_id'),
+            // DB::raw('archive_info.procharona_info->>"$.file_name" as file_name'),
+            // DB::raw('archive_info.procharona_info->>"$.file_directory" as file_directory'),
         ];
 
         $where = ['archive_type' => 8, 'archive_info.is_active' => 1];
@@ -2732,11 +2732,11 @@ class ArchiveController extends Controller
             'archive_info.*',
             'branch_infos.name as station_name',
             'employees.emp_name',
-            DB::raw('archive_info.songit_info->>"$.name" as song_name'),
-            DB::raw('archive_info.songit_info->>"$.id" as song_id'),
-            DB::raw('archive_info.songit_info->>"$.first_line" as first_line'),
-            DB::raw('archive_info.songit_info->>"$.file_name" as file_name'),
-            DB::raw('archive_info.songit_info->>"$.file_directory" as file_directory'),
+            // DB::raw('archive_info.songit_info->>"$.name" as song_name'),
+            // DB::raw('archive_info.songit_info->>"$.id" as song_id'),
+            // DB::raw('archive_info.songit_info->>"$.first_line" as first_line'),
+            // DB::raw('archive_info.songit_info->>"$.file_name" as file_name'),
+            // DB::raw('archive_info.songit_info->>"$.file_directory" as file_directory'),
         ];
 
         $between = false;
@@ -2829,11 +2829,11 @@ class ArchiveController extends Controller
             'archive_info.*',
             'branch_infos.name as station_name',
             'employees.emp_name',
-            DB::raw('archive_info.kobita_info->>"$.name" as kobita_name'),
-            DB::raw('archive_info.kobita_info->>"$.id" as kobita_id'),
-            DB::raw('archive_info.kobita_info->>"$.first_line" as first_line'),
-            DB::raw('archive_info.kobita_info->>"$.file_name" as file_name'),
-            DB::raw('archive_info.kobita_info->>"$.file_directory" as file_directory'),
+            // DB::raw('archive_info.kobita_info->>"$.name" as kobita_name'),
+            // DB::raw('archive_info.kobita_info->>"$.id" as kobita_id'),
+            // DB::raw('archive_info.kobita_info->>"$.first_line" as first_line'),
+            // DB::raw('archive_info.kobita_info->>"$.file_name" as file_name'),
+            // DB::raw('archive_info.kobita_info->>"$.file_directory" as file_directory'),
         ];
 
         $where_date = false;
@@ -2930,11 +2930,11 @@ class ArchiveController extends Controller
             'archive_info.*',
             'branch_infos.name as station_name',
             'employees.emp_name',
-            DB::raw('archive_info.natok_info->>"$.name" as natok_name'),
-            DB::raw('archive_info.natok_info->>"$.id" as natok_id'),
-            DB::raw('archive_info.natok_info->>"$.nattokar" as nattokar_id'),
-            DB::raw('archive_info.natok_info->>"$.file_name" as file_name'),
-            DB::raw('archive_info.natok_info->>"$.file_directory" as file_directory'),
+            // DB::raw('archive_info.natok_info->>"$.name" as natok_name'),
+            // DB::raw('archive_info.natok_info->>"$.id" as natok_id'),
+            // DB::raw('archive_info.natok_info->>"$.nattokar" as nattokar_id'),
+            // DB::raw('archive_info.natok_info->>"$.file_name" as file_name'),
+            // DB::raw('archive_info.natok_info->>"$.file_directory" as file_directory'),
         ];
 
         $where = ['archive_type' => 3, 'archive_info.is_active' => 1];
@@ -3032,10 +3032,10 @@ class ArchiveController extends Controller
             'archive_info.*',
             'branch_infos.name as station_name',
             'employees.emp_name',
-            DB::raw('archive_info.program_info->>"$.name" as program_name'),
-            DB::raw('archive_info.program_info->>"$.id" as program_id'),
-            DB::raw('archive_info.program_info->>"$.file_name" as file_name'),
-            DB::raw('archive_info.program_info->>"$.file_directory" as file_directory'),
+            // DB::raw('archive_info.program_info->>"$.name" as program_name'),
+            // DB::raw('archive_info.program_info->>"$.id" as program_id'),
+            // DB::raw('archive_info.program_info->>"$.file_name" as file_name'),
+            // DB::raw('archive_info.program_info->>"$.file_directory" as file_directory'),
         ];
 
         $where = ['archive_type' => 4, 'archive_info.is_active' => 1];
@@ -3133,10 +3133,10 @@ class ArchiveController extends Controller
             'archive_info.*',
             'branch_infos.name as station_name',
             'employees.emp_name',
-            DB::raw('archive_info.vhason_info->>"$.name" as program_name'),
-            DB::raw('archive_info.vhason_info->>"$.id" as vhason_id'),
-            DB::raw('archive_info.vhason_info->>"$.file_name" as file_name'),
-            DB::raw('archive_info.vhason_info->>"$.file_directory" as file_directory'),
+            // DB::raw('archive_info.vhason_info->>"$.name" as program_name'),
+            // DB::raw('archive_info.vhason_info->>"$.id" as vhason_id'),
+            // DB::raw('archive_info.vhason_info->>"$.file_name" as file_name'),
+            // DB::raw('archive_info.vhason_info->>"$.file_directory" as file_directory'),
         ];
 
         $where = ['archive_type' => 5, 'archive_info.is_active' => 1];
@@ -3234,10 +3234,10 @@ class ArchiveController extends Controller
             'archive_info.*',
             'branch_infos.name as station_name',
             'employees.emp_name',
-            DB::raw('archive_info.sakhhatkar_info->>"$.name" as program_name'),
-            DB::raw('archive_info.sakhhatkar_info->>"$.id" as vhason_id'),
-            DB::raw('archive_info.sakhhatkar_info->>"$.file_name" as file_name'),
-            DB::raw('archive_info.sakhhatkar_info->>"$.file_directory" as file_directory'),
+            // DB::raw('archive_info.sakhhatkar_info->>"$.name" as program_name'),
+            // DB::raw('archive_info.sakhhatkar_info->>"$.id" as vhason_id'),
+            // DB::raw('archive_info.sakhhatkar_info->>"$.file_name" as file_name'),
+            // DB::raw('archive_info.sakhhatkar_info->>"$.file_directory" as file_directory'),
         ];
 
         $where = ['archive_type' => 6, 'archive_info.is_active' => 1];
@@ -3334,10 +3334,10 @@ class ArchiveController extends Controller
             'archive_info.*',
             'branch_infos.name as station_name',
             'employees.emp_name',
-            DB::raw('archive_info.kothika_info->>"$.name" as program_name'),
-            DB::raw('archive_info.kothika_info->>"$.id" as vhason_id'),
-            DB::raw('archive_info.kothika_info->>"$.file_name" as file_name'),
-            DB::raw('archive_info.kothika_info->>"$.file_directory" as file_directory'),
+            // DB::raw('archive_info.kothika_info->>"$.name" as program_name'),
+            // DB::raw('archive_info.kothika_info->>"$.id" as vhason_id'),
+            // DB::raw('archive_info.kothika_info->>"$.file_name" as file_name'),
+            // DB::raw('archive_info.kothika_info->>"$.file_directory" as file_directory'),
         ];
 
         $where = ['archive_type' => 7, 'archive_info.is_active' => 1];
@@ -3435,10 +3435,10 @@ class ArchiveController extends Controller
             'archive_info.*',
             'branch_infos.name as station_name',
             'employees.emp_name',
-            DB::raw('archive_info.procharona_info->>"$.name" as program_name'),
-            DB::raw('archive_info.procharona_info->>"$.id" as vhason_id'),
-            DB::raw('archive_info.procharona_info->>"$.file_name" as file_name'),
-            DB::raw('archive_info.procharona_info->>"$.file_directory" as file_directory'),
+            // DB::raw('archive_info.procharona_info->>"$.name" as program_name'),
+            // DB::raw('archive_info.procharona_info->>"$.id" as vhason_id'),
+            // DB::raw('archive_info.procharona_info->>"$.file_name" as file_name'),
+            // DB::raw('archive_info.procharona_info->>"$.file_directory" as file_directory'),
         ];
 
         $where = ['archive_type' => 8, 'archive_info.is_active' => 1];

@@ -367,6 +367,14 @@ class SettingCtrl extends Controller
         $all_product_info = All_stting::get_all_product_info();
         return view('setting.product_info',['all_product_ctg_info' => $product_info,'all_unit_info'=>$all_unit_info,'all_product_info'=>$all_product_info]);
     }
+    public function getSubCategoryInfo(request $request) {
+        $sub_category_info = DB::table('all_sttings')->where([
+            'is_active' => 1,
+            'parent_id' => (int) $request->parent_id
+        ])->get();
+        echo json_encode($sub_category_info);
+    }
+
     public function show_upazila_by_district(request $request){
         $upazila_info=All_stting::get_upazilas(['district_id'=>$request->district_id]);
         if(!empty($upazila_info)){
@@ -511,6 +519,8 @@ class SettingCtrl extends Controller
             'artist_song_ctg'=>$artist_song_ctg,'artist_grade_info'=>$artist_grade_info,'work_area'=>$work_area,'artist_vumika'=>$artist_vumika]);
     }
     public function get_all_product_sub_ctg(request $request){
+        echo "<pre>";
+        print_r($request);
         if(!empty($request->discription_id)) {
             $artist_grade_info = All_stting::get_artist_grade_info(['type'=>1]);
             $work_area = All_stting::get_settings_info(['type'=>18,'is_active'=>1]);

@@ -47,7 +47,7 @@
                                 </select>
                             </div>
                             <div class="col-sm-2">
-                                <select id="product_ctg" class="form-control"   name="product_ctg">
+                                <select id="product_ctg" class="form-control"   name="product_ctg" onchange="getSubCategoryInfo(this.value)">
                                     <option value="">Select</option>
                                     @if(!empty($product_ctg))
                                         @foreach($product_ctg as $ctg)

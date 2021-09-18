@@ -292,7 +292,7 @@ class Employee extends Model
         }
         return $query->pluck((DB::raw("CASE WHEN name_bn IS NOT NULL THEN name_bn ELSE name END  as name_bn")),"id");
     }
-    public static function get_artist_select_presentation($station_id = null,$expertise_id=null)
+    public static function get_artist_select_presentation($where = null,$expertise_id=null)
     {
         $host = request()->getHttpHost();
         if($host=='localhost') {

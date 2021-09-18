@@ -110,7 +110,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label"> Category</label>
                             <div class="col-md-8">
-                                <select id="product_ctg" class="form-control"   name="product_ctg">
+                                <select id="product_ctg" class="form-control"   name="product_ctg" onchange="getSubCategoryInfo(this.value)">
                                     <option value="">Select</option>
                                     @if(!empty($all_product_ctg_info))
                                         @foreach($all_product_ctg_info as $ctg)

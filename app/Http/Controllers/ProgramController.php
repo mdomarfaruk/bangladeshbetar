@@ -2237,6 +2237,8 @@ class ProgramController extends Controller
         $station_info = Branch_info::branch_info_select(['is_active'=>1]);
         $presention_setting_info=Program_schedule_info::get_program_presentation_single_setting(['program_presentation_setting.station_id'=>$station_id,'program_presentation_setting.is_active'=>1,'program_presentation_setting.fequencey_id'=>$fequencey]);
         $setting_content=(!empty($presention_setting_info->content_info))?$presention_setting_info->content_info:NULL;
+    //    echo "<pre>";
+    //    print_r($dates);exit;
         return view('program.presentation.load_date_data',[
             'atrist_info_info'=>$atrist_info_info,
             'station_info'=>$station_info,

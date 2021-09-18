@@ -233,7 +233,9 @@ class AllSetupCtrl extends Controller
 
     public function get_montly_open()
     {
+    
         $get_fiscal_year_info = Monthly_opening::get_fiscal_year_info();
+        
         $monthly_info = DB::table('monthly_openings')
             ->leftJoin("fiscal_year", "fiscal_year.id", "=", "monthly_openings.fiscal_year_id")
             ->where('monthly_openings.status', '!=', 0)

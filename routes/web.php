@@ -134,6 +134,7 @@ Route::get('/product_info','SettingCtrl@product_info');
 Route::post('/get_all_product_sub_ctg','SettingCtrl@get_all_product_sub_ctg');
 Route::post('/save_product_info','SettingCtrl@save_product_info');
 Route::post('/get_signle_product_info','SettingCtrl@get_signle_product_info');
+Route::get('/getSubCategoryInfo','SettingCtrl@getSubCategoryInfo');
 //Route::post('/searching_product_info','SettingCtrl@searching_product_info');
 Route::post("searching_product_info",array('as'=>'autocomplete','uses'=> 'SettingCtrl@searching_product_info'));
 Route::post("searching_employee_info",array('as'=>'autocomplete','uses'=> 'EmployeeController@searching_employee_info'));
