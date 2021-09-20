@@ -56,6 +56,8 @@
                         $day_info=(!empty($presentation_setting_info->content_info))? json_decode
                         ($presentation_setting_info->content_info,true):'';
 
+                         
+
                         ?>
                         
                         <tr>
@@ -76,6 +78,8 @@
 
                      
                                 @foreach($day_data as $key=> $odivision_info)
+
+                            
                                     <table class="table table-bordered table-striped table-hover width100per" id="presentation_table">
                                         <tr>
                                           
@@ -115,8 +119,12 @@
                                                     if(!empty($odivision_info['log_writer'])){
                                                         $info='';
                                                         foreach ($odivision_info['log_writer']  as $key=>$value){
+                                                          
                                                             if(!empty($value)){
-                                                                $info.=$atrist_info_info[$value].",";
+
+                                                                if(isset($atrist_info_info[$value])){
+                                                                $info.= $atrist_info_info[$value].",";
+                                                                }
                                                             }
                                                         }
                                                         echo trim($info,',');
@@ -163,18 +171,18 @@
                                            
                                             <td style="width: 20% !important;">
                                                 <?php
-                                                    if(!empty($odivision_info['duty_officer'])){
-                                                        $info='';
-                                                        foreach ($odivision_info['duty_officer']  as $key=>$value){
-                                                            if(!empty($value)){
-                                                                $info.=$atrist_info_info[$value].",";
-                                                            }
-                                                        }
-                                                        echo trim($info,',');
-                                                    }else{
-                                                        echo "<span class='emptyColorInfo'> কোন তথ্য পাওয়া যায় নাই
-                                                        </span>";
-                                                    }
+                                                    // if(!empty($odivision_info['duty_officer'])){
+                                                    //     $info='';
+                                                    //     foreach ($odivision_info['duty_officer']  as $key=>$value){
+                                                    //         if(!empty($value)){
+                                                    //             $info.=$atrist_info_info[$value].",";
+                                                    //         }
+                                                    //     }
+                                                    //     echo trim($info,',');
+                                                    // }else{
+                                                    //     echo "<span class='emptyColorInfo'> কোন তথ্য পাওয়া যায় নাই
+                                                    //     </span>";
+                                                    // }
                                                 ?>
                                             </td>
 
@@ -186,7 +194,11 @@
                                 @endforeach
                               
                                 <?php 
+                                 
                                   $j++;
+                                //   echo "<pre>";
+                                //   print_r($day_data);exit;
+                                  
                                 }
                                   ?>
 

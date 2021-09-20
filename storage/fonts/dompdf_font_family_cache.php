@@ -78,10 +78,10 @@
     'normal' => $rootDir . '\lib\fonts\DejaVuSerif',
   ),
   'glyphicons halflings' => array(
-    'normal' => $fontDir . '\91012d71f579d64142377bdf627a0c6b',
+    'normal' => $fontDir . '/glyphicons-halflings-normal_b4d812e677d56f0e17126f19f932409a',
   ),
   'fontawesome' => array(
-    'normal' => $fontDir . '\782b2b93a158412ad22fcde37ebfa27b',
+    'normal' => $fontDir . '/fontawesome-normal_f946a53daeb6b772726f7e5d64f8f63e',
   ),
   'open sans' => array(
     'italic' => $fontDir . '\cdf8e5914899060cf001b67b8bfa2cdc',

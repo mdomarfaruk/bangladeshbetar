@@ -31,6 +31,8 @@
                             <div id="oneToTen" class="tab-pane fade in active">
                                 <?php
                                     foreach ($dates as $day_id=>$date) {
+
+
                                     $day_id++;
                                     $j=0;
                                         if($day_id>=0 && $day_id<=10  ){
@@ -44,6 +46,8 @@
                                                 </div>
                                             </div>
                                             @foreach($odivision as $odivision_id)
+
+                                           
                                                 <table  class="table table-bordered width100per" id="presentation_table"  >
                                                     <tr>
                                                         <th colspan="6">
@@ -60,11 +64,16 @@
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 20% !important;">
+                                                        
                                                             <?php
-                                                            $duty_officer_info=  $setting_content[date('D',strtotime
+                                                            $duty_officer_info= isset( $setting_content[date('D',strtotime
                                                             ($date))
-                                                            ][$odivision_id] ['duty_officer'];
+                                                            ][$odivision_id] ['duty_officer']) ?  $setting_content[date('D',strtotime
+                                                            ($date))
+                                                            ][$odivision_id] ['duty_officer'] : "";
+                                                            
                                                             ?>
+                                                              
                                                             <input type="hidden"  name="program_date[{{$date}}][{{$odivision_id}}][duty_officer]" class="form-control">
                                                             <select id="magazine_manage" placeholder="ডিউটি অফিসার"  class="select2"  multiple required
                                                                     name="program_date[{{$date}}][{{$odivision_id}}][duty_officer][]" style="width:100% !important">
@@ -74,7 +83,7 @@
                                                                             $selected= ( !empty($duty_officer_info) &&
                                                                             in_array($key,
                                                                             $duty_officer_info))
-                                                                            ?"selected":'';
+                                                                            ? "selected":'';
                                                                         @endphp
                                                                         <option value="{{ $key }}" {{ $selected }}>{{ $value
                                                                             }}</option>
@@ -82,11 +91,15 @@
                                                                 @endif
                                                             </select>
                                                         </td>
+
+                                                     
                                                         <td style="width: 20% !important;">
                                                             <?php
-                                                                $announcer_info=  $setting_content[date('D',strtotime
+                                                                $announcer_info=  isset($setting_content[date('D',strtotime
                                                                 ($date))
-                                                                ][$odivision_id] ['announcer'];
+                                                                ][$odivision_id] ['announcer']) ? $setting_content[date('D',strtotime
+                                                                ($date))
+                                                                ][$odivision_id] ['announcer'] : "";
 
                                                             ?>
                                                             <input type="hidden"  name="program_date[{{$date}}][{{$odivision_id}}][announcer]" class="form-control">
@@ -106,11 +119,14 @@
                                                                 @endif
                                                             </select>
                                                         </td>
+                                                      
                                                         <td style="width: 20% !important;">
                                                             <?php
-                                                                $log_writer_info=  $setting_content[date('D',strtotime
+                                                                $log_writer_info=  isset($setting_content[date('D',strtotime
                                                                 ($date))
-                                                                ][$odivision_id] ['log_writer'];
+                                                                ][$odivision_id] ['log_writer']) ? $setting_content[date('D',strtotime
+                                                                ($date))
+                                                                ][$odivision_id] ['log_writer'] : "" ;
                                                             ?>
                                                             <input type="hidden"  name="program_date[{{$date}}][{{$odivision_id}}][log_writer]" class="form-control">
                                                             <select id="magazine_manage" placeholder="লগ রাইটার"  class="select2"  multiple required
@@ -130,11 +146,15 @@
                                                                 @endif
                                                             </select>
                                                         </td>
+
+                                                       
                                                         <td style="width: 20% !important;">
                                                             <?php
-                                                            $officer_assistent_info=  $setting_content[date('D',strtotime
+                                                            $officer_assistent_info=  isset($setting_content[date('D',strtotime
                                                             ($date))
-                                                            ][$odivision_id] ['officer_assistent'];
+                                                            ][$odivision_id] ['officer_assistent']) ? $setting_content[date('D',strtotime
+                                                            ($date))
+                                                            ][$odivision_id] ['officer_assistent'] : "" ;
                                                             ?>
                                                             <input type="hidden"  name="program_date[{{$date}}][{{$odivision_id}}][officer_assistent]" class="form-control">
                                                             <select id="magazine_manage" placeholder="অফিস সহায়ক"  class="select2"  multiple required
@@ -153,11 +173,14 @@
                                                                 @endif
                                                             </select>
                                                         </td>
+                                                       
                                                         <td style="width: 20% !important;">
                                                             <?php
-                                                                $officer_incharge_info=  $setting_content[date('D',strtotime
+                                                                $officer_incharge_info=  isset($setting_content[date('D',strtotime
                                                                 ($date))
-                                                                ][$odivision_id] ['officer_incharge'];
+                                                                ][$odivision_id] ['officer_incharge']) ?  $setting_content[date('D',strtotime
+                                                                ($date))
+                                                                ][$odivision_id] ['officer_incharge'] : "";
                                                             ?>
                                                             <input type="hidden"  name="program_date[{{$date}}][{{$odivision_id}}][officer_incharge]" class="form-control">
                                                             <select id="magazine_manage" placeholder="অফিসার ইনসার্স"  class="select2"  multiple required
@@ -178,8 +201,7 @@
                                                             </select>
 
                                                         </td>
-
-
+                                                       
                                                     </tr>
                                                 </table>
 
@@ -190,7 +212,8 @@
                                     }
                                 ?>
                             </div>
-                    <!--
+
+                    
                             <div id="elevenToTwenty" class="tab-pane fade">
                                 <?php
                                 foreach ($dates as $day_id=>$date) {
@@ -224,9 +247,11 @@
                                         <tr>
                                             <td style="width: 20% !important;">
                                                 <?php
-                                                $duty_officer_info=  $setting_content[date('D',strtotime
+                                                $duty_officer_info=  isset($$setting_content[date('D',strtotime
                                                 ($date))
-                                                ][$odivision_id] ['duty_officer'];
+                                                ][$odivision_id] ['duty_officer']) ? $setting_content[date('D',strtotime
+                                                ($date))
+                                                ][$odivision_id] ['duty_officer'] : "";
                                                 ?>
                                                 <input type="hidden"  name="program_date[{{$date}}][{{$odivision_id}}][duty_officer]" class="form-control">
                                                 <select id="magazine_manage" placeholder="ডিউটি অফিসার"  class="select2"  multiple required
@@ -245,9 +270,11 @@
                                             </td>
                                             <td style="width: 20% !important;">
                                                 <?php
-                                                    $announcer_info=  $setting_content[date('D',strtotime
+                                                    $announcer_info=  isset($setting_content[date('D',strtotime
                                                     ($date))
-                                                    ][$odivision_id] ['announcer'];
+                                                    ][$odivision_id] ['announcer']) ? $setting_content[date('D',strtotime
+                                                    ($date))
+                                                    ][$odivision_id] ['announcer'] : "";
                                                 ?>
                                                 <input type="hidden"  name="program_date[{{$date}}][{{$odivision_id}}][announcer]" class="form-control">
                                                 <select id="magazine_manage" placeholder="ঘোষক"  class="select2"  multiple required
@@ -267,9 +294,11 @@
                                             </td>
                                             <td style="width: 20% !important;">
                                                 <?php
-                                                    $log_writer_info=  $setting_content[date('D',strtotime
+                                                    $log_writer_info=  isset($setting_content[date('D',strtotime
                                                     ($date))
-                                                    ][$odivision_id] ['log_writer'];
+                                                    ][$odivision_id] ['log_writer']) ? $setting_content[date('D',strtotime
+                                                    ($date))
+                                                    ][$odivision_id] ['log_writer'] : "";
                                                 ?>
                                                 <input type="hidden"  name="program_date[{{$date}}][{{$odivision_id}}][log_writer]" class="form-control">
                                                 <select id="magazine_manage" placeholder="লগ রাইটার"  class="select2"  multiple required
@@ -289,9 +318,11 @@
                                             </td>
                                             <td style="width: 20% !important;">
                                                 <?php
-                                                $officer_assistent_info=  $setting_content[date('D',strtotime
+                                                $officer_assistent_info=  isset($setting_content[date('D',strtotime
                                                 ($date))
-                                                ][$odivision_id] ['officer_assistent'];
+                                                ][$odivision_id] ['officer_assistent']) ? $$setting_content[date('D',strtotime
+                                                ($date))
+                                                ][$odivision_id] ['officer_assistent'] : "";
                                                 ?>
                                                 <input type="hidden"  name="program_date[{{$date}}][{{$odivision_id}}][officer_assistent]" class="form-control">
                                                 <select id="magazine_manage" placeholder="অফিস সহায়ক"  class="select2"  multiple required
@@ -312,9 +343,11 @@
                                             </td>
                                             <td style="width: 20% !important;">
                                                 <?php
-                                                    $officer_incharge_info=  $setting_content[date('D',strtotime
+                                                    $officer_incharge_info=  isset($setting_content[date('D',strtotime
                                                     ($date))
-                                                    ][$odivision_id] ['officer_incharge'];
+                                                    ][$odivision_id] ['officer_incharge']) ? $setting_content[date('D',strtotime
+                                                    ($date))
+                                                    ][$odivision_id] ['officer_incharge'] : "";
                                                 ?>
                                                 <input type="hidden"  name="program_date[{{$date}}][{{$odivision_id}}][officer_incharge]" class="form-control">
                                                 <select id="magazine_manage" placeholder="অফিসার ইনসার্স"  class="select2"  multiple required
@@ -381,9 +414,11 @@
                                         <tr>
                                             <td style="width: 20% !important;">
                                                 <?php
-                                                $duty_officer_info=  $setting_content[date('D',strtotime
+                                                $duty_officer_info= isset( $setting_content[date('D',strtotime
                                                 ($date))
-                                                ][$odivision_id] ['duty_officer'];
+                                                ][$odivision_id] ['duty_officer']) ?  $setting_content[date('D',strtotime
+                                                ($date))
+                                                ][$odivision_id] ['duty_officer'] : "";
                                                 ?>
                                                 <input type="hidden"  name="program_date[{{$date}}][{{$odivision_id}}][duty_officer]" class="form-control">
                                                 <select id="magazine_manage" placeholder="ডিউটি অফিসার"  class="select2"  multiple required
@@ -403,9 +438,11 @@
 
                                             <td style="width: 20% !important;">
                                                 <?php
-                                                    $announcer_info=  $setting_content[date('D',strtotime
+                                                    $announcer_info= isset( $setting_content[date('D',strtotime
                                                     ($date))
-                                                    ][$odivision_id] ['announcer'];
+                                                    ][$odivision_id] ['announcer']) ?  $setting_content[date('D',strtotime
+                                                    ($date))
+                                                    ][$odivision_id] ['announcer'] : "";
                                                 ?>
                                                 <input type="hidden"  name="program_date[{{$date}}][{{$odivision_id}}][announcer]" class="form-control">
                                                 <select id="magazine_manage" placeholder="ঘোষক"  class="select2"  multiple required
@@ -425,9 +462,11 @@
                                             </td>
                                             <td style="width: 20% !important;">
                                                 <?php
-                                                    $log_writer_info=  $setting_content[date('D',strtotime
+                                                    $log_writer_info=  isset($setting_content[date('D',strtotime
                                                     ($date))
-                                                    ][$odivision_id] ['log_writer'];
+                                                    ][$odivision_id] ['log_writer']) ? $setting_content[date('D',strtotime
+                                                    ($date))
+                                                    ][$odivision_id] ['log_writer'] : "";
                                                 ?>
                                                 <input type="hidden"  name="program_date[{{$date}}][{{$odivision_id}}][log_writer]" class="form-control">
                                                 <select id="magazine_manage" placeholder="লগ রাইটার"  class="select2"  multiple required
@@ -447,9 +486,11 @@
                                             </td>
                                             <td style="width: 20% !important;">
                                                 <?php
-                                                $officer_assistent_info=  $setting_content[date('D',strtotime
+                                                $officer_assistent_info=  isset($setting_content[date('D',strtotime
                                                 ($date))
-                                                ][$odivision_id] ['officer_assistent'];
+                                                ][$odivision_id] ['officer_assistent']) ? $setting_content[date('D',strtotime
+                                                ($date))
+                                                ][$odivision_id] ['officer_assistent'] : "";
                                                 ?>
                                                 <input type="hidden"  name="program_date[{{$date}}][{{$odivision_id}}][officer_assistent]" class="form-control">
                                                 <select id="magazine_manage" placeholder="অফিস সহায়ক"  class="select2"  multiple required
@@ -470,9 +511,11 @@
                                             </td>
                                             <td style="width: 20% !important;">
                                                 <?php
-                                                    $officer_incharge_info=  $setting_content[date('D',strtotime
+                                                    $officer_incharge_info=  isset($setting_content[date('D',strtotime
                                                     ($date))
-                                                    ][$odivision_id] ['officer_incharge'];
+                                                    ][$odivision_id] ['officer_incharge']) ? $setting_content[date('D',strtotime
+                                                    ($date))
+                                                    ][$odivision_id] ['officer_incharge'] : "";
                                                 ?>
                                                 <input type="hidden"  name="program_date[{{$date}}][{{$odivision_id}}][officer_incharge]" class="form-control">
                                                 <select id="magazine_manage" placeholder="অফিসার ইনসার্স"  class="select2"  multiple required
@@ -502,7 +545,7 @@
                                 }
                                 }
                                 ?>
-                            </div>-->
+                            </div>
                     </div>
                 </div>
             </div>
