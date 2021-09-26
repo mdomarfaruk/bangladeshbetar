@@ -44,8 +44,8 @@
         <tbody>
                 @php 
                 $i=0;
-               // echo "<pre>";
-              //  print_r($schedule);
+            //    echo "<pre>";
+            //    print_r($schedule);
                 @endphp
                 @foreach($schedule as  $parentKey => $value)
                     <tr id="schedule_{{$i}}">
@@ -60,7 +60,7 @@
                             <input type="text"  placeholder='অনুষ্ঠানের ওভাররাইড টাইটেল' class='form-control' onkeyUp="modifySchedule( {{$i}}, this.value)" style="display:none" name="overwrite_details" id="overwrite_details_{{$i}}"/>
                         </td>
                         <td>
-                            <input type="text" value="<?php echo $value['description'] ?>" placeholder="অনুষ্ঠানের বিষয়বস্তু" class="form-control">
+                            <input type="text" value="<?php if(!empty($value['description'])){ echo $value['description'] ;}else{ echo ""; } ?>" placeholder="অনুষ্ঠানের বিষয়বস্তু" class="form-control">
                             </td>
                         <td>
                             <input type="text" onchange="pushPlaylist({{ $i }},this.value)"   id="playlist_info_{{ $i }}" onkeyup="autocompletePlaylistInfo('{{ $i }}')" placeholder="প্লে লিষ্ট আইডি নং" class="form-control"

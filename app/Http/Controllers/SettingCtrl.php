@@ -1403,6 +1403,7 @@ class SettingCtrl extends Controller
             or
             JSON_CONTAINS(content->'$[*].days[*]', JSON_ARRAY('$dayname_info->id')) 
         )");
+
         
         // echo "schedule query is generated";exit;
 
@@ -1669,8 +1670,8 @@ class SettingCtrl extends Controller
         // presentation info. performance update end
 
         // live program info. performance update start
-            //$performance_date=$request->performance_data;
-            $performance_date='20-10-2019';
+            $performance_date=$request->performance_data;
+           // $performance_date='20-10-2019';
             $param=[
                 'program_planning_infos.entry_date'=> date('Y-m-d',strtotime($performance_date)),
                 'program_planning_infos.station_id'=>$request->station_id,
