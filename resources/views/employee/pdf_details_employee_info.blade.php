@@ -70,12 +70,20 @@ $employee_leave = (!empty($employee_leave_info) ? json_decode($employee_leave_in
 
         <tr>
             <th class="vertical-align-top">Present Address</th>
-            <td>: <b>Vill/House/Road</b>: {{ $present_address->vill_road }}, <b>Post Office</b>: {{ $present_address->post_office }}, <b>Police Station</b>:{{ $present_address->upazila }}, <b>District</b>: {{ $present_address->district }}
+            @php
+                $present_district_info  = App\District::find($present_address->district);
+                $present_upazila_info   = App\Upazila::find($present_address->upazila);
+            @endphp
+            <td>: <b>Vill/House/Road</b>: {{ $present_address->vill_road }}, <b>Post Office</b>: {{ $present_address->post_office }}, <b>Police Station</b>:{{ $present_upazila_info->name }}, <b>District</b>: {{ $present_district_info->name }}
             </td>
             <th class="emp-text-right vertical-align-top">Parmanent Address</th>
+            @php
+                $parmanent_district_info  = App\District::find($parmanent_address->district);
+                $parmanent_upazila_info   = App\Upazila::find($parmanent_address->upazila);
+            @endphp
             <td>:
                 @if(!empty($parmanent_address))
-                    <b>Vill/House/Road</b>:{{ $parmanent_address->vill_road }}, <b>Post Office</b>: {{ $parmanent_address->post_office }}, <b>Police  Station</b>: {{ $parmanent_address->upazila }}, <b>District</b>:{{ $parmanent_address->district }}
+                    <b>Vill/House/Road</b>:{{ $parmanent_address->vill_road }}, <b>Post Office</b>: {{ $parmanent_address->post_office }}, <b>Police  Station</b>: {{ $parmanent_district_info->name }}, <b>District</b>:{{ $parmanent_upazila_info->name }}
                 @endif
             </td>
         </tr>
@@ -258,7 +266,10 @@ $employee_leave = (!empty($employee_leave_info) ? json_decode($employee_leave_in
             </tr>
             <tr>
                 <th>Home District</th>
-                <td>: {{ $spouse_info['spouse_home_district'] }}</td>
+                @php
+                   $spouse_district_info  = App\District::find($spouse_info['spouse_home_district']);
+                @endphp
+                <td>: {{ $spouse_district_info->name }}</td>
                 <th class="emp-text-right">Organization</th>
                 <td>: {{ $spouse_info['spouse_organization'] }}</td>
             </tr>
