@@ -294,6 +294,10 @@ Route::get('/report_land_info','StateController@report_land_info');
 Route::get('/report_building','StateController@report_building');
 Route::get('/report_maintance_building','StateController@report_maintance_building');
 
+Route::get('/state_area_setup','StateController@state_area_setup');
+
+Route::post('/search_land_information_report','ReportCtrl@search_land_information_report');
+
 //Route::get('/delete_land_info/{id}','LandController@delete_land_info');
 
 

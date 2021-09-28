@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Branch_info;
 use App\Land_info;
 use App\Monthly_opening;
+use App\All_stting;
 use Datatables;
 use Validator;
 use App\Employee;
@@ -35,8 +36,9 @@ class LandController extends Controller
         }
     }
     public function land_info(){
+        $setup_info  = All_stting::get_all_settings_info(['type'=>25]);
         $branch_info = Branch_info::branch_info_select(['is_active'=>1]);
-        return view('asset.land.land_info',['branch_info'=>$branch_info]);
+        return view('asset.land.land_info',['branch_info'=>$branch_info, 'setup_info'=> $setup_info]);
     }
     public function mutation_record(){
         $branch_info = Branch_info::branch_info_select(['is_active'=>1]);
@@ -79,6 +81,7 @@ class LandController extends Controller
             }
         }else {
             DB::beginTransaction();
+
             if (empty($request->land_id)) {
                 $land_data = new Land_info();
             }else{
@@ -99,10 +102,14 @@ class LandController extends Controller
             $land_data->case_details = (!empty($request->case_details)?$request->case_details:NULL);
             $land_data->case_last_update= (!empty($request->case_last_update)?$request->case_last_update:NULL);
             $land_data->case_status =(!empty($request->case_status)?$request->case_status:NULL);
+            $land_data->area = $request->area;
             $land_data->created_at = date('Y-m-d H:i:s');
             $land_data->created_by = (!empty(Auth::user()->id) ? Auth::user()->id : NULL);
             $land_data->created_ip = (!empty(Employee::getIp()))?Employee::getIp():$request->ip();
             $land_data->updated_at = date('Y-m-d H:i:s');
+
+            // echo "<pre>";
+            // print_r($land_data);exit;
 
             $save_data= $land_data->save();
 

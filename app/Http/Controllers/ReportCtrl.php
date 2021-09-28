@@ -8,6 +8,7 @@ use App\Branch_info;
 use App\All_stting;
 use App\Employee;
 use App\Program_schedule_info;
+use App\Land_info;
 use PDF;
 
 class ReportCtrl extends Controller
@@ -179,6 +180,23 @@ class ReportCtrl extends Controller
                 'presentation_info' => $presentation_info,
                 'artist_info' => $atrist_info_info
             ]);
+    }
+
+    // land report
+    public function search_land_information_report(request $request){
+        if (empty($request->station_id)){
+            return ['status'=>'error','message'=>'Station Name is required','data'=>''];
+        }else {
+            $param=[
+                'station_id'=>$request->station_id,
+                'area'=>$request->area,
+            ];
+
+            $data=Land_info::get_search_land_info($param);
+
+            return view('report.land_information_report_action',['data'=>$data]);
+
+        }
     }
 
 

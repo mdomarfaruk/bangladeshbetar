@@ -19,14 +19,14 @@ $combine_segment    =   $segment1."/".$segment2
         <li class="active">
             <a href="<?php  echo asset('/state');?>" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Deshboard</span></a>
         </li>
-        <li >
+        <!--<li >
             <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent"> Immovable Property</span></a>
             <ul>
                 <li <?php if(in_array($segment1,['immovable_property'])){ echo 'class="active"';} ?> >
                     <a href="<?php  echo asset('/immovable_property');?>">Immovable Record</a>
                 </li>
             </ul>
-        </li>
+        </li>-->
         <li >
             <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent"> Land Info.</span></a>
             <ul>
@@ -69,6 +69,15 @@ $combine_segment    =   $segment1."/".$segment2
                 <li <?php if(in_array($segment1,['report_maintance_building'])){ echo 'class="active"';} ?> >
                     <a href="<?php  echo asset('/report_maintance_building');?>"> Maintance Of Building</a>
                 </li>
+            </ul>
+        </li>
+        <li >
+            <a href="#"><i class="fa fa-lg fa-fw fa-cog"></i> <span class="menu-item-parent"> Setting</span></a>
+            <ul>
+                <li <?php if(in_array($segment1,['state_area_setup'])){ echo 'class="active"';} ?> >
+                    <a href="<?php  echo asset('/state_area_setup');?>"> Area </a>
+                </li>
+              
             </ul>
         </li>
     </ul>

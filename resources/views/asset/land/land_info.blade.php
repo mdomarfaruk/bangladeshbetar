@@ -107,8 +107,6 @@
                             </div>
 
                         </div>
-
-
                         <div class="form-group">
 
                             <label class="col-md-2 control-label">Details</label>
@@ -152,6 +150,15 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label class="col-md-2 control-label">Area(এলাকা)</label>
+                            <div class="col-md-4">
+                                <select name="area"  id="area" class="form-control">
+                                    <option value="">Select</option>
+                                    @foreach ($setup_info as $item)
+                                    <option value="{{$item->id}}">{{$item->title}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                             <label class="col-md-2 control-label">Case(মামলা)</label>
                             <div class="col-md-4">
                                 <select id="is_case" class="form-control"  name="is_case">

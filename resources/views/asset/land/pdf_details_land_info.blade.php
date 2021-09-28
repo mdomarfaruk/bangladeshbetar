@@ -62,12 +62,17 @@
         <td>: {{ $land_info->zer_no }}</td>
     </tr>
     <tr>
-        <th >Last Payment Tax DT</th>
-        <td >: {{ $land_info->last_date_tax }}</td>
+        <th>Area </th>
+        @php
+            $area_info = App\All_stting::find($land_info->area);    
+        @endphp
+        <td >: {{ $area_info->title }}</td>
         <th class="emp-text-right" >Land Quantity</th>
         <td>: {{ $land_info->land_quantity }}</td>
     </tr>
     <tr>
+        <th >Last Payment Tax DT</th>
+        <td >: {{ $land_info->last_date_tax }}</td>
         <th >Has Case</th>
         <td colspan="3" >: {{ ($land_info->is_found_case==1)?"No":"Yes" }}</td>
     </tr>

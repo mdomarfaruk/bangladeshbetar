@@ -16,10 +16,10 @@
                     <table class="table table-striped table-hover table-bordered" >
 
                         <tbody>
-                        <tr>
+                        <!--<tr>
                             <td>Immovable Property</td>
                             <td class="text-right"><a href="" class="badge">0</a></td>
-                        </tr>
+                        </tr>-->
                         <tr>
                             <td>Land Info.</td>
                             <td class="text-right"><a href="" class="badge">0</a></td>
@@ -96,11 +96,11 @@
         <div >
             <div class="widget-body  smart-form" style="margin-bottom:10px;">
                 <div class="col-sm-12">
-                    <div class="col-sm-2 widget-box-header blue"   >
+                    <!--<div class="col-sm-2 widget-box-header blue"   >
                         <a href="<?php echo url('/immovable_property'); ?>" style="margin-top:50px;">
                             <i class="glyphicon glyphicon-list icon-size"style=""></i> <span class="widget-box-text">Immovable Property</span>
                         </a>
-                    </div>
+                    </div>-->
                     <div class="col-sm-2 widget-box-header blue"  >
                         <a href="<?php echo url('/land_info'); ?>">
                             <i class="glyphicon glyphicon-th -list icon-size"style=""></i> <span class="widget-box-text">Land Info</span>

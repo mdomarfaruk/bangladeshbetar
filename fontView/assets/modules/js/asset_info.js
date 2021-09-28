@@ -486,3 +486,25 @@ $("#product_stock_data").DataTable({
 });
 
 
+// land report
+
+function land_information_search() {
+    $.ajax({
+        type: "POST",
+        url: base_url + "/search_land_information_report",
+        data: $('#land_info_report_form').serialize(),
+        success: function (response) {
+            if (response.status=='error') {
+                var error='<div class="alert alert-danger">' + response.message + '</div>'
+                $('#error_data').html(error);
+                $('#show_report_info').html('');
+            } else {
+                $('#error_data').html('');
+                $('#show_report_info').html(response);
+
+            }
+        }
+    });
+}
+
+
