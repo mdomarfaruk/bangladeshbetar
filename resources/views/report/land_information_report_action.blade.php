@@ -3,8 +3,8 @@
     <tr>
         <th >SL</th>
         <th > Station</th>
-        <th > Land No </th>
         <th > Area </th>
+        <th > Land No </th>
         <th > Khotian</th>
         <th > Mouza</th>
         <th > Dag</th>
@@ -23,8 +23,8 @@
             <tr>
                 <td>{{ $i++ }}</td>
                 <td>{{$row->station_name}}</td>
-                <td>{{ $row->land_no }}</td>
                 <td>{{ $row->area_name }}</td>
+                <td>{{ $row->land_no }}</td>
                 <td>{{ $row->khotian_no }}</td>
                 <td>{{ $row->mouza_no }}</td>
                 <td>{{ $row->dag_no }}</td>

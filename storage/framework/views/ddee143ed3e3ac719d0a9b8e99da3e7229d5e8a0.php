@@ -3,8 +3,8 @@
     <tr>
         <th >SL</th>
         <th > Station</th>
-        <th > Land No </th>
         <th > Area </th>
+        <th > Land No </th>
         <th > Khotian</th>
         <th > Mouza</th>
         <th > Dag</th>
@@ -23,8 +23,8 @@
             <tr>
                 <td><?php echo e($i++); ?></td>
                 <td><?php echo e($row->station_name); ?></td>
-                <td><?php echo e($row->land_no); ?></td>
                 <td><?php echo e($row->area_name); ?></td>
+                <td><?php echo e($row->land_no); ?></td>
                 <td><?php echo e($row->khotian_no); ?></td>
                 <td><?php echo e($row->mouza_no); ?></td>
                 <td><?php echo e($row->dag_no); ?></td>

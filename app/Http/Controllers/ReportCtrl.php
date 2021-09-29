@@ -188,8 +188,14 @@ class ReportCtrl extends Controller
             return ['status'=>'error','message'=>'Station Name is required','data'=>''];
         }else {
             $param=[
-                'station_id'=>$request->station_id,
-                'area'=>$request->area,
+                'station_id'   =>$request->station_id,
+                'area'         =>$request->area,
+                'land_no'      =>$request->land_no,
+                'dag_no'       =>$request->dag_no,
+                'khotian_no'   =>$request->khotian_no,
+                'mouza_no'     =>$request->mouza_no,
+                'zer_no'       =>$request->zer_no,
+                'last_date_tax'=> date('Y-m-d', strtotime($request->last_date_tax)),
             ];
 
             $data=Land_info::get_search_land_info($param);
